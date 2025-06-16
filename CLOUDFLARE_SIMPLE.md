@@ -1,7 +1,8 @@
 # 🚀 Cloudflare Pages 简化部署指南
 
 ## ❌ 当前问题
-lockfile冲突导致部署失败
+1. lockfile冲突导致部署失败
+2. Cloudflare检测到bun.lockb文件，使用Bun而不是npm构建
 
 ## ✅ 最简单的解决方案
 
@@ -28,24 +29,27 @@ lockfile冲突导致部署失败
    
    Build settings:
    Framework preset: None (不要选择Vite)
-   Build command: rm -f package-lock.json && npm install && npm run build
+   Build command: rm -f bun.lockb && npm install && npm run build
    Build output directory: dist
    Root directory: (留空)
-   
+
    Environment variables:
    NODE_VERSION = 18.20.0
    NPM_CONFIG_LEGACY_PEER_DEPS = true
+   DISABLE_BUN = true
    ```
 
 ### 步骤2：本地清理并重新提交
 
 ```bash
-# 删除所有锁文件
+# 删除所有锁文件（包括bun.lockb）
 rm -f package-lock.json
 rm -f yarn.lock
+rm -f bun.lockb
 
-# 清理node_modules
+# 清理node_modules和bun缓存
 rm -rf node_modules
+rm -rf .bun
 
 # 重新安装
 npm install
@@ -55,7 +59,7 @@ npm run build
 
 # 提交更改
 git add .
-git commit -m "fix: 清理lockfile，简化Cloudflare部署配置"
+git commit -m "fix: 删除bun.lockb，强制使用npm构建"
 git push
 ```
 

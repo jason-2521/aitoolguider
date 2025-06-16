@@ -105,3 +105,7 @@ wrangler.toml
 # Excel files (if not needed in repo)
 *.xlsx
 *.xls
+
+# Bun files (we use npm instead)
+bun.lockb
+.bun/

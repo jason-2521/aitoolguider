@@ -1,0 +1,13 @@
+{
+  "name": "ai-tools-navigation",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm install && vite build",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "header": {
+    "title": "AI Tools Navigation",
+    "nav": {
+      "home": "Home",
+      "categories": "Categories", 
+      "featured": "Featured",
+      "about": "About"
+    }
+  },
+  "hero": {
+    "title": "Discover the Best",
+    "titleHighlight": "AI Tools",
+    "subtitle": "Curated collection of the latest and most excellent artificial intelligence tools to boost your productivity and creativity",
+    "searchPlaceholder": "Search AI tools..."
+  },
+  "categories": {
+    "all": "All",
+    "chat": "AI Assistant",
+    "image": "Image Generation", 
+    "writing": "Writing Assistant",
+    "coding": "Code Assistant",
+    "video": "Video Creation",
+    "audio": "Audio Processing",
+    "design": "Design Tools",
+    "productivity": "Productivity"
+  },
+  "sections": {
+    "featured": "🌟 Featured Tools",
+    "allTools": "🔧 All Tools",
+    "categoryTools": "📂 {{category}}",
+    "toolCount": "({{count}} tools)"
+  },
+  "buttons": {
+    "tryNow": "Try Now",
+    "visitTool": "Visit Tool",
+    "switchLanguage": "中文"
+  },
+  "search": {
+    "noResults": "No matching tools found",
+    "tryOther": "Try other keywords or categories"
+  },
+  "footer": {
+    "description": "Discover and explore the latest and most excellent artificial intelligence tools to boost your productivity and creativity.",
+    "copyright": "© 2024 AI Tools Navigation. All rights reserved.",
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "categories": "Tool Categories", 
+      "featured": "Featured Tools",
+      "submit": "Submit Tool"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "about": "About Us",
+      "contact": "Contact",
+      "feedback": "Feedback",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "tags": {
+    "conversation": "Conversation",
+    "assistant": "Assistant", 
+    "textGeneration": "Text Generation",
+    "design": "Design",
+    "creative": "Creative",
+    "templates": "Templates",
+    "writing": "Writing",
+    "contentCreation": "Content Creation",
+    "translation": "Translation",
+    "imageGeneration": "Image Generation",
+    "artCreation": "Art Creation",
+    "generation": "Generation",
+    "programming": "Programming",
+    "codeGeneration": "Code Generation",
+    "videoProduction": "Video Production",
+    "videoEditing": "Video Editing",
+    "audioProcessing": "Audio Processing",
+    "voiceSynthesis": "Voice Synthesis",
+    "productivity": "Productivity",
+    "automation": "Automation"
+  }
+}

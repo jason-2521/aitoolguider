@@ -1,0 +1,83 @@
+{
+  "header": {
+    "title": "AI工具导航",
+    "nav": {
+      "home": "首页",
+      "categories": "分类",
+      "featured": "推荐", 
+      "about": "关于"
+    }
+  },
+  "hero": {
+    "title": "发现最佳的",
+    "titleHighlight": "AI工具",
+    "subtitle": "精选最新最优秀的人工智能工具，提升你的工作效率和创造力",
+    "searchPlaceholder": "搜索AI工具..."
+  },
+  "categories": {
+    "all": "全部",
+    "chat": "AI助手",
+    "image": "图像生成",
+    "writing": "写作助手", 
+    "coding": "编程辅助",
+    "video": "视频制作",
+    "audio": "音频处理",
+    "design": "设计工具",
+    "productivity": "效率工具"
+  },
+  "sections": {
+    "featured": "🌟 精选推荐",
+    "allTools": "🔧 所有工具",
+    "categoryTools": "📂 {{category}}",
+    "toolCount": "({{count}} 个工具)"
+  },
+  "buttons": {
+    "tryNow": "立即体验",
+    "visitTool": "访问工具",
+    "switchLanguage": "English"
+  },
+  "search": {
+    "noResults": "没有找到匹配的工具",
+    "tryOther": "试试其他关键词或分类"
+  },
+  "footer": {
+    "description": "发现和探索最新最优秀的人工智能工具，提升你的工作效率和创造力。",
+    "copyright": "© 2024 AI工具导航. 保留所有权利.",
+    "quickLinks": {
+      "title": "快速链接",
+      "home": "首页",
+      "categories": "工具分类",
+      "featured": "推荐工具", 
+      "submit": "提交工具"
+    },
+    "contact": {
+      "title": "联系我们",
+      "about": "关于我们",
+      "contact": "联系方式",
+      "feedback": "意见反馈",
+      "privacy": "隐私政策"
+    }
+  },
+  "tags": {
+    "conversation": "对话",
+    "assistant": "AI助手",
+    "textGeneration": "文本生成",
+    "design": "设计",
+    "creative": "创意",
+    "templates": "模板",
+    "writing": "写作",
+    "contentCreation": "内容创作",
+    "translation": "翻译",
+    "imageGeneration": "图像生成",
+    "artCreation": "艺术创作",
+    "generation": "生成",
+    "programming": "编程",
+    "codeGeneration": "代码生成",
+    "videoProduction": "视频制作",
+    "videoEditing": "视频编辑",
+    "audioProcessing": "音频处理",
+    "voiceSynthesis": "语音合成",
+    "productivity": "效率工具",
+    "automation": "自动化"
+  }
+}

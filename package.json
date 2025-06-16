@@ -12,8 +12,8 @@
     "clean": "rm -rf dist node_modules/.vite",
     "type-check": "tsc --noEmit",
     "deploy:vercel": "npm run build && vercel --prod",
-    "deploy:cloudflare": "npm run build && wrangler pages deploy dist",
-    "cf:dev": "wrangler pages dev dist"
+    "deploy:cloudflare": "npm run build",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

@@ -1,28 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Search, Sparkles, Zap, Brain, Image, Music, Video, Code, FileText, MessageSquare } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import UrlRedirect from '@/components/UrlRedirect';
 import { aiToolsData } from '@/data/aiTools';
 import { trackToolClick, trackSearch, trackCategoryFilter } from '@/components/GoogleAnalytics';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
+  const { lang } = useParams<{ lang?: string }>();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
+  // Handle language from URL
+  useEffect(() => {
+    if (lang && (lang === 'en' || lang === 'zh')) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang, i18n]);
+
   const categories = [
-    { id: 'all', name: t('categories.all'), icon: Sparkles },
-    { id: 'chat', name: t('categories.chat'), icon: MessageSquare },
-    { id: 'image', name: t('categories.image'), icon: Image },
-    { id: 'writing', name: t('categories.writing'), icon: FileText },
-    { id: 'coding', name: t('categories.coding'), icon: Code },
-    { id: 'video', name: t('categories.video'), icon: Video },
-    { id: 'audio', name: t('categories.audio'), icon: Music },
-    { id: 'design', name: t('categories.design'), icon: Zap },
-    { id: 'productivity', name: t('categories.productivity'), icon: Brain },
+    { id: 'all', name: t('categories.all'), icon: Sparkles, slug: '' },
+    { id: 'chat', name: t('categories.chat'), icon: MessageSquare, slug: 'ai-chat' },
+    { id: 'image', name: t('categories.image'), icon: Image, slug: 'image-generation' },
+    { id: 'writing', name: t('categories.writing'), icon: FileText, slug: 'writing-tools' },
+    { id: 'coding', name: t('categories.coding'), icon: Code, slug: 'coding-tools' },
+    { id: 'video', name: t('categories.video'), icon: Video, slug: 'video-tools' },
+    { id: 'audio', name: t('categories.audio'), icon: Music, slug: 'audio-tools' },
+    { id: 'design', name: t('categories.design'), icon: Zap, slug: 'design-tools' },
+    { id: 'productivity', name: t('categories.productivity'), icon: Brain, slug: 'productivity-tools' },
   ];
 
   const generateTags = (category: string, keyFeatures: string): string[] => {
@@ -84,9 +95,15 @@ const Index = () => {
   };
 
   // Track category filter changes
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    trackCategoryFilter(category);
+  const handleCategoryChange = (categoryId: string) => {
+    const category = categories.find(c => c.id === categoryId);
+    if (category && category.slug) {
+      const langPrefix = lang ? `/${lang}` : '';
+      navigate(`${langPrefix}/category/${category.slug}`);
+    } else {
+      setSelectedCategory(categoryId);
+      trackCategoryFilter(categoryId);
+    }
   };
 
   const featuredTools = filteredTools.filter(tool => tool.featured);
@@ -94,6 +111,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+      <UrlRedirect />
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-purple-100">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">

@@ -1,0 +1,56 @@
+# URL重定向规则 - Cloudflare Pages
+
+# 旧的查询参数重定向到新的路径结构
+/?category=chat /category/ai-chat 301
+/?category=image /category/image-generation 301
+/?category=writing /category/writing-tools 301
+/?category=coding /category/coding-tools 301
+/?category=video /category/video-tools 301
+/?category=audio /category/audio-tools 301
+/?category=design /category/design-tools 301
+/?category=productivity /category/productivity-tools 301
+
+# 语言参数重定向
+/?lang=zh /zh 301
+/?lang=en /en 301
+
+# 组合参数重定向
+/?category=chat&lang=zh /zh/category/ai-chat 301
+/?category=image&lang=zh /zh/category/image-generation 301
+/?category=writing&lang=zh /zh/category/writing-tools 301
+/?category=coding&lang=zh /zh/category/coding-tools 301
+/?category=video&lang=zh /zh/category/video-tools 301
+/?category=audio&lang=zh /zh/category/audio-tools 301
+/?category=design&lang=zh /zh/category/design-tools 301
+/?category=productivity&lang=zh /zh/category/productivity-tools 301
+
+/?category=chat&lang=en /en/category/ai-chat 301
+/?category=image&lang=en /en/category/image-generation 301
+/?category=writing&lang=en /en/category/writing-tools 301
+/?category=coding&lang=en /en/category/coding-tools 301
+/?category=video&lang=en /en/category/video-tools 301
+/?category=audio&lang=en /en/category/audio-tools 301
+/?category=design&lang=en /en/category/design-tools 301
+/?category=productivity&lang=en /en/category/productivity-tools 301
+
+# 反向参数重定向
+/?lang=zh&category=chat /zh/category/ai-chat 301
+/?lang=zh&category=image /zh/category/image-generation 301
+/?lang=zh&category=writing /zh/category/writing-tools 301
+/?lang=zh&category=coding /zh/category/coding-tools 301
+/?lang=zh&category=video /zh/category/video-tools 301
+/?lang=zh&category=audio /zh/category/audio-tools 301
+/?lang=zh&category=design /zh/category/design-tools 301
+/?lang=zh&category=productivity /zh/category/productivity-tools 301
+
+/?lang=en&category=chat /en/category/ai-chat 301
+/?lang=en&category=image /en/category/image-generation 301
+/?lang=en&category=writing /en/category/writing-tools 301
+/?lang=en&category=coding /en/category/coding-tools 301
+/?lang=en&category=video /en/category/video-tools 301
+/?lang=en&category=audio /en/category/audio-tools 301
+/?lang=en&category=design /en/category/design-tools 301
+/?lang=en&category=productivity /en/category/productivity-tools 301
+
+# 确保所有其他路径正常工作
+/* /index.html 200

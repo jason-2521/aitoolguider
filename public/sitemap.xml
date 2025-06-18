@@ -13,69 +13,107 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aitoolsguidex.com/"/>
   </url>
 
-  <!-- Category pages -->
+  <!-- Language versions -->
   <url>
-    <loc>https://aitoolsguidex.com/?category=chat</loc>
+    <loc>https://aitoolsguidex.com/en</loc>
     <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=image</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=writing</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=coding</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=video</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=audio</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=design</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aitoolsguidex.com/?category=productivity</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Featured tools page -->
-  <url>
-    <loc>https://aitoolsguidex.com/?featured=true</loc>
-    <lastmod>2025-06-17</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/zh</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Category pages - English -->
+  <url>
+    <loc>https://aitoolsguidex.com/category/ai-chat</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/ai-chat"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/ai-chat"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/image-generation</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/image-generation"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/image-generation"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/writing-tools</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/writing-tools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/writing-tools"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/coding-tools</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/coding-tools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/coding-tools"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/video-tools</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/video-tools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/video-tools"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/audio-tools</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/audio-tools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/audio-tools"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/design-tools</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/design-tools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/design-tools"/>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/category/productivity-tools</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aitoolsguidex.com/en/category/productivity-tools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aitoolsguidex.com/zh/category/productivity-tools"/>
+  </url>
+
+  <!-- Language-specific category pages -->
+  <url>
+    <loc>https://aitoolsguidex.com/en/category/ai-chat</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://aitoolsguidex.com/zh/category/ai-chat</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

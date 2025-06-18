@@ -24,7 +24,7 @@
 
 4. **关键配置设置**
    ```
-   Project name: ai-tools-navigation
+   Project name: aitoolsguidex
    Production branch: main
    
    Build settings:

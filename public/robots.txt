@@ -14,8 +14,8 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://ai-tools-navigation.pages.dev/sitemap.xml
-Sitemap: https://ai-tools-navigation.pages.dev/sitemap-bing.xml
+Sitemap: https://aitoolsguidex.com/sitemap.xml
+Sitemap: https://aitoolsguidex.com/sitemap-bing.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

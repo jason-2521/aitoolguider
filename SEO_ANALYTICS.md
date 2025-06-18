@@ -26,7 +26,7 @@ G-4J7HYVSTYD
 
 ### Google站点地图
 - **文件位置**: `/public/sitemap.xml`
-- **URL**: `https://ai-tools-navigation.pages.dev/sitemap.xml`
+- **URL**: `https://aitoolsguidex.com/sitemap.xml`
 - **包含内容**:
   - 主页（多语言版本）
   - 分类页面
@@ -34,7 +34,7 @@ G-4J7HYVSTYD
 
 ### Bing站点地图
 - **文件位置**: `/public/sitemap-bing.xml`
-- **URL**: `https://ai-tools-navigation.pages.dev/sitemap-bing.xml`
+- **URL**: `https://aitoolsguidex.com/sitemap-bing.xml`
 - **专门优化**: 针对Bing搜索引擎优化
 
 ## 🤖 Robots.txt配置
@@ -66,13 +66,13 @@ G-4J7HYVSTYD
 
 ### Google Search Console
 1. 访问 https://search.google.com/search-console/
-2. 添加属性: `https://ai-tools-navigation.pages.dev`
+2. 添加属性: `https://aitoolsguidex.com`
 3. 验证所有权（HTML标签或DNS验证）
 4. 提交站点地图: `/sitemap.xml`
 
 ### Bing Webmaster Tools
 1. 访问 https://www.bing.com/webmasters/
-2. 添加网站: `https://ai-tools-navigation.pages.dev`
+2. 添加网站: `https://aitoolsguidex.com`
 3. 验证所有权
 4. 提交站点地图: `/sitemap-bing.xml`
 

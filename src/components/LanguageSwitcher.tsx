@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
+import { trackLanguageChange } from './GoogleAnalytics';
 
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
@@ -8,6 +9,7 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'zh' : 'en';
     i18n.changeLanguage(newLang);
+    trackLanguageChange(newLang);
   };
 
   return (

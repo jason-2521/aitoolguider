@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { aiToolsData } from '@/data/aiTools';
+import { trackToolClick, trackSearch, trackCategoryFilter } from '@/components/GoogleAnalytics';
 
 const Index = () => {
   const { t, i18n } = useTranslation();
@@ -69,6 +70,25 @@ const Index = () => {
     return matchesSearch && matchesCategory;
   });
 
+  // Track search when searchTerm changes
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+    if (value.length > 2) {
+      const results = localizedTools.filter(tool =>
+        tool.name.toLowerCase().includes(value.toLowerCase()) ||
+        tool.description.toLowerCase().includes(value.toLowerCase()) ||
+        tool.tags.some(tag => tag.toLowerCase().includes(value.toLowerCase()))
+      );
+      trackSearch(value, results.length);
+    }
+  };
+
+  // Track category filter changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    trackCategoryFilter(category);
+  };
+
   const featuredTools = filteredTools.filter(tool => tool.featured);
   const regularTools = filteredTools.filter(tool => !tool.featured);
 
@@ -109,7 +129,7 @@ const Index = () => {
                 type="text"
                 placeholder={t('hero.searchPlaceholder')}
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 className="pl-12 pr-4 py-3 text-lg border-2 border-purple-200 focus:border-purple-400 rounded-xl"
               />
             </div>
@@ -122,7 +142,7 @@ const Index = () => {
                 <Button
                   key={category.id}
                   variant={selectedCategory === category.id ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category.id)}
+                  onClick={() => handleCategoryChange(category.id)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all ${
                     selectedCategory === category.id
                       ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
@@ -184,11 +204,16 @@ const Index = () => {
                         </span>
                       ))}
                     </div>
-                    <Button 
-                      asChild 
+                    <Button
+                      asChild
                       className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
                     >
-                      <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={tool.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackToolClick(tool.name, tool.category, tool.url)}
+                      >
                         {t('buttons.tryNow')}
                       </a>
                     </Button>
@@ -239,13 +264,18 @@ const Index = () => {
                         </span>
                       ))}
                     </div>
-                    <Button 
-                      asChild 
-                      variant="outline" 
+                    <Button
+                      asChild
+                      variant="outline"
                       size="sm"
                       className="w-full hover:bg-purple-50 hover:border-purple-300"
                     >
-                      <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={tool.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackToolClick(tool.name, tool.category, tool.url)}
+                      >
                         {t('buttons.visitTool')}
                       </a>
                     </Button>

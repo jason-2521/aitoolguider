@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Search, Sparkles, Zap, Brain, Image, Music, Video, Code, FileText, MessageSquare } from 'lucide-react';
+import { Search, Sparkles, Zap, Brain, Image, Music, Video, Code, FileText, MessageSquare, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -77,8 +77,15 @@ const Index = () => {
     const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          tool.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    // If there's a search term, show all matching tools regardless of category
+    if (searchTerm.trim().length > 0) {
+      return matchesSearch;
+    }
+
+    // If no search term, filter by category
     const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    return matchesCategory;
   });
 
   // Track search when searchTerm changes
@@ -148,8 +155,16 @@ const Index = () => {
                 placeholder={t('hero.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="pl-14 pr-6 py-4 text-lg md:text-xl border-2 border-purple-200 focus:border-purple-400 rounded-2xl shadow-lg focus:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                className="pl-14 pr-14 py-4 text-lg md:text-xl border-2 border-purple-200 focus:border-purple-400 rounded-2xl shadow-lg focus:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm"
               />
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm('')}
+                  className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
             </div>
           </div>
 
@@ -185,10 +200,22 @@ const Index = () => {
           </div>
         )}
 
+        {/* Search Results Info */}
+        {searchTerm.trim().length > 0 && (
+          <div className="text-center mb-8">
+            <p className="text-lg text-gray-600">
+              {filteredTools.length > 0
+                ? t('search.resultsFound', { count: filteredTools.length, term: searchTerm })
+                : t('search.noResultsFor', { term: searchTerm })
+              }
+            </p>
+          </div>
+        )}
+
         {featuredTools.length > 0 && (
           <section className="mb-16">
             <h3 className="text-3xl font-bold mb-8 text-center">
-              {t('sections.featured')}
+              {searchTerm.trim().length > 0 ? t('sections.searchResults') : t('sections.featured')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredTools.map((tool) => (

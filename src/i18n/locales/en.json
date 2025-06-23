@@ -30,7 +30,8 @@
     "featured": "🌟 Featured Tools",
     "allTools": "🔧 All Tools",
     "categoryTools": "📂 {{category}}",
-    "toolCount": "({{count}} tools)"
+    "toolCount": "({{count}} tools)",
+    "searchResults": "Search Results"
   },
   "buttons": {
     "tryNow": "Try Now",
@@ -39,7 +40,10 @@
   },
   "search": {
     "noResults": "No matching tools found",
-    "tryOther": "Try other keywords or categories"
+    "tryOther": "Try other keywords or categories",
+    "resultsFound": "Found {{count}} tools for \"{{term}}\"",
+    "noResultsFor": "No tools found for \"{{term}}\"",
+    "tryDifferent": "Try searching with different keywords"
   },
   "footer": {
     "description": "Discover and explore the latest and most excellent artificial intelligence tools to boost your productivity and creativity.",

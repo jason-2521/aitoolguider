@@ -74,8 +74,15 @@ const CategoryPage = () => {
     const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          tool.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    // If there's a search term, show all matching tools regardless of category
+    if (searchTerm.trim().length > 0) {
+      return matchesSearch;
+    }
+
+    // If no search term, filter by category
     const matchesCategory = selectedCategoryId === 'all' || tool.category === selectedCategoryId;
-    return matchesSearch && matchesCategory;
+    return matchesCategory;
   });
 
   const handleSearchChange = (value: string) => {

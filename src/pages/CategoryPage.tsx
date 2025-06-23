@@ -102,14 +102,14 @@ const CategoryPage = () => {
       {/* Update document title */}
       <title>{pageTitle}</title>
       
-      <header className="bg-white/80 backdrop-blur-sm border-b border-purple-100 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <header className="bg-white/90 backdrop-blur-md border-b border-purple-100 sticky top-0 z-50 shadow-sm">
+        <div className="container mx-auto px-4 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Sparkles className="w-7 h-7 text-white" />
               </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 {pageTitle}
               </h1>
             </div>
@@ -118,27 +118,27 @@ const CategoryPage = () => {
         </div>
       </header>
 
-      <section className="py-16 px-4">
+      <section className="pt-20 pb-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
               {currentCategory ? currentCategory.name : t('hero.title')}
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              {currentCategory 
+            <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-4xl mx-auto leading-relaxed">
+              {currentCategory
                 ? t('hero.categoryDescription', { category: currentCategory.name })
                 : t('hero.subtitle')
               }
             </p>
-            
-            <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+
+            <div className="relative max-w-3xl mx-auto mb-8">
+              <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
               <Input
                 type="text"
                 placeholder={t('hero.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="pl-12 pr-4 py-3 text-lg border-2 border-purple-200 focus:border-purple-400 rounded-xl"
+                className="pl-14 pr-6 py-4 text-lg md:text-xl border-2 border-purple-200 focus:border-purple-400 rounded-2xl shadow-lg focus:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm"
               />
             </div>
           </div>
@@ -155,15 +155,15 @@ const CategoryPage = () => {
                   key={cat.id}
                   asChild
                   variant={isActive ? "default" : "outline"}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all ${
+                  className={`flex items-center space-x-2 px-5 py-3 rounded-full transition-all duration-300 ${
                     isActive
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                      : 'hover:bg-purple-50 hover:border-purple-300'
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
+                      : 'hover:bg-purple-50 hover:border-purple-300 hover:shadow-md'
                   }`}
                 >
                   <a href={href}>
                     <Icon className="w-4 h-4" />
-                    <span>{cat.name}</span>
+                    <span className="font-medium">{cat.name}</span>
                   </a>
                 </Button>
               );

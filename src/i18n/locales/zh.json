@@ -11,8 +11,9 @@
   "hero": {
     "title": "发现最佳的",
     "titleHighlight": "AI工具",
-    "subtitle": "精选最新最优秀的人工智能工具，提升你的工作效率和创造力",
-    "searchPlaceholder": "搜索AI工具..."
+    "subtitle": "您的AI工具终极指南。精选最强大的人工智能工具，提升工作效率，释放创造力，用前沿AI技术改变您的工作流程。",
+    "searchPlaceholder": "搜索AI工具、分类或功能...",
+    "categoryDescription": "探索最佳的{{category}}AI工具"
   },
   "categories": {
     "all": "全部",

@@ -11,8 +11,9 @@
   "hero": {
     "title": "Discover the Best",
     "titleHighlight": "AI Tools",
-    "subtitle": "Curated collection of the latest and most excellent artificial intelligence tools to boost your productivity and creativity",
-    "searchPlaceholder": "Search AI tools..."
+    "subtitle": "Your ultimate guide to the most powerful AI tools. Boost productivity, unleash creativity, and transform your workflow with cutting-edge artificial intelligence.",
+    "searchPlaceholder": "Search AI tools, categories, or features...",
+    "categoryDescription": "Explore the best {{category}} tools powered by AI"
   },
   "categories": {
     "all": "All",
